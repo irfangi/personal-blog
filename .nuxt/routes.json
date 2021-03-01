@@ -1,5 +1,12 @@
 [
   {
+    "name": "about-me",
+    "path": "/about-me",
+    "component": "/Volumes/disk0s2 - Data/yolo/personal-blog/pages/about-me.vue",
+    "chunkName": "pages/about-me",
+    "_name": "_6849f308"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Volumes/disk0s2 - Data/yolo/personal-blog/pages/index.vue",
