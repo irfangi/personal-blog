@@ -3,14 +3,18 @@
     "name": "about-me",
     "path": "/about-me",
     "component": "/Volumes/disk0s2 - Data/yolo/personal-blog/pages/about-me.vue",
-    "chunkName": "pages/about-me",
-    "_name": "_6849f308"
+    "chunkName": "pages/about-me"
+  },
+  {
+    "name": "articles-slug",
+    "path": "/articles/:slug?",
+    "component": "/Volumes/disk0s2 - Data/yolo/personal-blog/pages/articles/_slug.vue",
+    "chunkName": "pages/articles/_slug"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Volumes/disk0s2 - Data/yolo/personal-blog/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_5d796c44"
+    "chunkName": "pages/index"
   }
 ]
