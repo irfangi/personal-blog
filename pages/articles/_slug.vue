@@ -1,8 +1,8 @@
 <template>
-<pre> {{ article }} </pre>
+<!-- <pre> {{ article }} </pre> -->
 
 
-    <!-- <nuxt-content :document="article"/> -->
+    <nuxt-content :document="article"/>
 </template>
 <script>
 export default {
@@ -12,3 +12,12 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    .nuxt-content{
+        h1{
+            /* background: #000; */
+            @apply font-bold text-2xl mt-3 text-gray-700;
+        }
+    }
+</style>
