@@ -1,23 +1,35 @@
 <template>
-<!-- <pre> {{ article }} </pre> -->
-
-
-    <nuxt-content :document="article"/>
+  <article>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.description }}</p>
+    <!-- <img :src="require(`img/${article.img}`)" :alt="article.alt" /> -->
+    <img :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" />
+    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+    <nuxt-content :document="article" />
+  </article>
 </template>
 <script>
 export default {
-    async asyncData({$content, params}){
-        const article = await $content('articles', params.slug).fetch()
-        return {article}
-    }
-}
+  async asyncData({ $content, params }) {
+    const article = await $content("articles", params.slug).fetch();
+    return { article };
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-    .nuxt-content{
-        h1{
-            /* background: #000; */
-            @apply font-bold text-2xl mt-3 text-gray-700;
-        }
-    }
+.nuxt-content {
+  h1 {
+    @apply font-bold;
+    @apply text-2xl;
+    @apply mt-3;
+    @apply text-gray-700;
+  }
+}
 </style>

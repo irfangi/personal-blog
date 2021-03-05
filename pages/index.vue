@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-9 gap-4 border-b-2 mb-2">
+    <div class="grid grid-cols-9 gap-4 border-b-2 mb-2 pt-2 pb-5">
       <div class="col-span-2 p-4">
         <img
           class="rounded-full"
@@ -28,47 +28,38 @@
     >
       Article
     </h3>
-    <div class="grid grid-cols-3 gap-4 mb-4">
+    <div class="grid grid-cols-3 gap-4 mb-4" v-for="article of articles" :key="article.slug">
       <div class="col-span-1">
-        <img class="rounded-lg mt-1" src="~/assets/images/nuxtjs.jpg" alt="" />
+        <img class="rounded-lg mt-2" :src="require(`~/assets/images/${article.img}`)" :alt="article.img" />
       </div>
       <div class="col-span-2">
         <h4 class="text-gray-800 text-xl font-semibold">
-          <nuxt-link to="">
-            Membuat Website Blog Dengan NUXTJS
+          <nuxt-link :to="article.path">
+            {{article.title}}
           </nuxt-link>
         </h4>
         <p class="mb-2 text-sm text-gray-500">20 February 2020</p>
         <p class="text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
-          necessitatibus nisi consectetur doloribus ullam tenetur exercitationem
-          totam quae natus velit assumenda architecto eligendi ratione quo enim
-          nemo alias optio inventore, dignissimos dolore numquam? Dolores
-          voluptate ratione quam dignissimos consequuntur harum?...
-          <NuxtLink to="" class="text-blue-600">Read More</NuxtLink>
-        </p>
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mb-4">
-      <div class="col-span-1">
-        <img class="rounded-lg mt-1" src="~/assets/images/nuxtjs.jpg" alt="" />
-      </div>
-      <div class="col-span-2">
-        <h4 class="text-gray-800 text-xl font-semibold">
-          <nuxt-link to="">
-            Membuat Website Blog Dengan NUXTJS
-          </nuxt-link>
-        </h4>
-        <p class="mb-2 text-sm text-gray-500">20 February 2020</p>
-        <p class="text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
-          necessitatibus nisi consectetur doloribus ullam tenetur exercitationem
-          totam quae natus velit assumenda architecto eligendi ratione quo enim
-          nemo alias optio inventore, dignissimos dolore numquam? Dolores
-          voluptate ratione quam dignissimos consequuntur harum?...
-          <NuxtLink to="" class="text-blue-600">Read More</NuxtLink>
+          {{article.description}}
+          <NuxtLink :to="article.path" class="text-blue-600">Read More</NuxtLink>
         </p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  async asyncData({ $content, listPost }) {
+    const articles = await $content("articles")
+      .only(["title", "description", "img", "alt","createdAt"])
+      .sortBy("createdAt", "asc")
+      .fetch();
+    console.log(articles);
+    return {articles}
+  },
+  mounted(){
+    // console.log(this.articles);
+  }
+};
+</script>
