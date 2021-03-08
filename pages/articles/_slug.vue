@@ -1,10 +1,8 @@
 <template>
   <article>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
-    <!-- <img :src="require(`img/${article.img}`)" :alt="article.alt" /> -->
-    <img :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" />
-    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+    <img class="w-full my-5" :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" />
+    <h1 class="font-bold text-2xl mb-1 text-gray-800">{{ article.title }}</h1>
+    <p class="text-sm text-gray-600 mb-3"> <span class="mr-3">🗓</span>{{ formatDate(article.updatedAt) }}</p>
     <nuxt-content :document="article" />
   </article>
 </template>
@@ -28,8 +26,49 @@ export default {
   h1 {
     @apply font-bold;
     @apply text-2xl;
-    @apply mt-3;
     @apply text-gray-700;
+    @apply mb-1;
+  }
+  h2 {
+    @apply font-bold;
+    @apply text-xl;
+    @apply text-gray-700;
+    @apply mb-1;
+  }
+  h3 {
+    @apply font-bold;
+    @apply text-lg;
+    @apply text-gray-700;
+    @apply mb-1;
+  }
+  h4 {
+    @apply font-bold;
+    @apply text-base;
+    @apply text-gray-700;
+    @apply mb-1;
+  }
+  h5 {
+    @apply font-bold;
+    @apply text-sm;
+    @apply text-gray-700;
+    @apply mb-1;
+  }
+  p{
+    @apply mb-2;
+    @apply text-gray-700;
+  }
+  img{
+    margin: 16px auto;
+    @apply border;
+  }
+  code{
+    @apply p-2;
+    @apply font-light;
+    @apply text-gray-700;
+    @apply bg-gray-200;
+    @apply text-sm;
+    @apply rounded-sm;
+    @apply mb-2;
   }
 }
 </style>

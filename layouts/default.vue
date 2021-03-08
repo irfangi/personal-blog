@@ -5,7 +5,7 @@
         <nuxt-link to="/" class="text-xl text-gray-700 items-center"
           >イルファ</nuxt-link
         >
-        <NuxtLink to="about-me" class="border-2 px-3 py-2 rounded text-gray-700"
+        <NuxtLink to="/about-me" class="border-2 px-3 py-2 rounded text-gray-700"
           >About Me</NuxtLink
         >
       </div>
