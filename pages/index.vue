@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="grid grid-cols-9 gap-4 border-b-2 mb-2 pt-2 pb-5">
-      <div class="col-span-2 p-4">
+    <div class="grid grid-cols-1 gap-4 mb-2 py-4">
+      <div class="col-span-1 md:col-span-1">
         <img
-          class="rounded-full"
+          class="rounded-full avatar-img"
           src="~/assets/images/irfangi.jpg"
           alt="Irfangi Image"
         />
       </div>
-      <div class="col-span-7">
+      <div class="col-span-1 md:col-span-2">
         <h3 class="font-bold text-2xl mt-3 text-gray-700">
           Hai Selamat Datang, Salam Kenal Semua 👋
         </h3>
@@ -22,27 +22,38 @@
         >
       </div>
     </div>
-
-    <h3
-      class="font-semibold text-2xl uppercase text-gray-800 border-b-4 inline-block mb-6"
-    >
-      Article
-    </h3>
-    <div class="grid grid-cols-3 gap-4 mb-4" v-for="article of articles" :key="article.slug">
-      <div class="col-span-1">
-        <img class="rounded-lg mt-2" :src="require(`~/assets/images/${article.img}`)" :alt="article.img" />
-      </div>
-      <div class="col-span-2">
-        <h4 class="text-gray-800 text-xl font-semibold">
-          <nuxt-link :to="article.path">
-            {{article.title}}
-          </nuxt-link>
-        </h4>
-        <p class="mb-2 text-sm text-gray-500">20 February 2020</p>
-        <p class="text-gray-700">
-          {{article.description}}
-          <NuxtLink :to="article.path" class="text-blue-600">Read More</NuxtLink>
-        </p>
+    <div class="py-4">
+      <h3
+        class="font-semibold text-2xl uppercase text-gray-800 border-b-4 inline-block mb-4"
+      >
+        Article
+      </h3>
+      <div
+        class="grid grid-cols-3 gap-4 mb-6"
+        v-for="article of articles"
+        :key="article.slug"
+      >
+        <div class="col-span-3">
+          <img
+            class="rounded-lg mt-2"
+            :src="require(`~/assets/images/${article.img}`)"
+            :alt="article.img"
+          />
+        </div>
+        <div class="col-span-3">
+          <h4 class="text-gray-800 text-xl font-semibold">
+            <nuxt-link :to="article.path">
+              {{ article.title }}
+            </nuxt-link>
+          </h4>
+          <p class="mb-2 text-sm text-gray-500">20 February 2020</p>
+          <p class="text-gray-700">
+            {{ article.description }}
+            <NuxtLink :to="article.path" class="text-blue-600"
+              >Read More</NuxtLink
+            >
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -52,14 +63,21 @@
 export default {
   async asyncData({ $content, listPost }) {
     const articles = await $content("articles")
-      .only(["title", "description", "img", "alt","createdAt"])
+      .only(["title", "description", "img", "alt", "createdAt"])
       .sortBy("createdAt", "asc")
       .fetch();
     console.log(articles);
-    return {articles}
+    return { articles };
   },
-  mounted(){
+  mounted() {
     // console.log(this.articles);
-  }
+  },
 };
 </script>
+
+<style scoped lang="scss">
+.avatar-img{
+  max-width: 200px;
+  margin:0 auto;
+}
+</style>

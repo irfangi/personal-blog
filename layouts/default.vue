@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="shadow-sm">
-      <div class="container mx-auto py-4 flex justify-between items-center">
+      <div class="container mx-auto p-4 flex justify-between items-center">
         <nuxt-link to="/" class="text-xl text-gray-700 items-center"
           >イルファ</nuxt-link
         >
@@ -10,9 +10,9 @@
         >
       </div>
     </div>
-    <div class="container mx-auto py-5">
+    <div class="container mx-auto px-4">
       <div class="grid grid-cols-10 gap-4">
-        <div class="col-start-2 col-span-8">
+        <div class="col-span-10">
           <Nuxt />
         </div>
       </div>

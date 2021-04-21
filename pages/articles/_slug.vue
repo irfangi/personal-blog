@@ -1,10 +1,25 @@
 <template>
-  <article>
-    <img class="w-full my-5" :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" />
-    <h1 class="font-bold text-2xl mb-1 text-gray-800">{{ article.title }}</h1>
-    <p class="text-sm text-gray-600 mb-3"> <span class="mr-3">🗓</span>{{ formatDate(article.updatedAt) }}</p>
-    <nuxt-content :document="article" />
-  </article>
+  <div class="grid grid-cols-12">
+    <div class="col-span-2 flex justify-center">
+      Share
+    </div>
+    <div class="col-span-10">
+      <article>
+        <img
+          class="w-full my-5"
+          :src="require(`~/assets/images/${article.img}`)"
+          :alt="article.alt"
+        />
+        <h1 class="font-bold text-2xl mb-1 text-gray-800">
+          {{ article.title }}
+        </h1>
+        <p class="text-sm text-gray-600 mb-3">
+          <span class="mr-3">🗓</span>{{ formatDate(article.updatedAt) }}
+        </p>
+        <nuxt-content :document="article" />
+      </article>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -53,15 +68,15 @@ export default {
     @apply text-gray-700;
     @apply mb-1;
   }
-  p{
+  p {
     @apply mb-2;
     @apply text-gray-700;
   }
-  img{
+  img {
     margin: 16px auto;
     @apply border;
   }
-  code{
+  code {
     @apply p-2;
     @apply font-light;
     @apply text-gray-700;
