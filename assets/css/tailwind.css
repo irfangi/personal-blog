@@ -1,3 +1,14 @@
 @tailwind base;
+@layer base {
+  a {
+    @apply text-blue-700;
+  }
+  p {
+    font-family: "Merriweather", "Georgia", Cambria, "Times New Roman", Times,
+      serif;
+    @apply text-lg;
+    @apply text-gray-800;
+  }
+}
 @tailwind components;
 @tailwind utilities;

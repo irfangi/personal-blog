@@ -1,6 +1,6 @@
 ---
 title: My first Blog Post
-description: Learning how to use @nuxt/content to create a blog
+description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed possimus dolor aut! Tenetur repellat, id cumque cum unde incidunt, alias magnam expedita numquam, vel nulla assumenda accusamus atque vero itaque.
 img: nuxtjs.jpg
 alt: my first blog post
 ---

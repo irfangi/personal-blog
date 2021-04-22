@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: "Irfangi | Personal Blog",
+    title: "Home | Irfangi",
     htmlAttrs: {
       lang: "id",
     },
