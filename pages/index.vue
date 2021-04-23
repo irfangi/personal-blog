@@ -42,7 +42,7 @@
         </div>
         <div class="col-span-3 md:col-span-2">
           <h4 class="text-gray-800 text-xl font-semibold">
-            <nuxt-link :to="`/${article.path===undefined?'':article.path}`">
+            <nuxt-link :to="`${article.path===undefined?'/':article.path}`">
               {{ article.title }}
             </nuxt-link>
           </h4>
@@ -51,7 +51,7 @@
             {{ article.description }}
           </p>
           <p>
-            <NuxtLink :to="`/${article.path===undefined?'':article.path}`" class="text-blue-600"
+            <NuxtLink :to="`/articles/${article.title.toLowerCase().replace(/\s/g, '-')}`" class="text-blue-600"
               >Read More</NuxtLink
             >
           </p>
@@ -68,7 +68,6 @@ export default {
       .only(["title", "description", "img", "alt", "createdAt"])
       .sortBy("createdAt", "asc")
       .fetch();
-    console.log(articles);
     return { articles };
   },
   mounted() {
