@@ -1,0 +1,15 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/about-me.js": "pages/about-me.js",
+    "pages/articles/_slug.js": "pages/articles/_slug.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/about-me.js": "pages/about-me.js.map",
+    "pages/articles/_slug.js": "pages/articles/_slug.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}
