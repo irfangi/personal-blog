@@ -6,7 +6,7 @@ alt: my first blog post
 ---
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed possimus dolor aut! Tenetur repellat, id cumque cum unde incidunt, alias magnam expedita numquam, vel nulla assumenda accusamus atque vero itaque.
-![Home](/_nuxt/assets/images/article/001-create-blog-with-nuxt/home.png)
+![Home](~/assets/images/article/001-create-blog-with-nuxt/home.png)
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed possimus dolor
 
 `<script> console.log()</script>`

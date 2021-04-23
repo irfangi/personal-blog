@@ -42,7 +42,7 @@
         </div>
         <div class="col-span-3 md:col-span-2">
           <h4 class="text-gray-800 text-xl font-semibold">
-            <nuxt-link :to="`${article.path===undefined?'/':article.path}`">
+            <nuxt-link :to="`/articles/${article.title.toLowerCase().replace(/\s/g, '-')}`">
               {{ article.title }}
             </nuxt-link>
           </h4>
